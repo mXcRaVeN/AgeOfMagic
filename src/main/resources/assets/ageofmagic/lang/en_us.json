@@ -1,34 +1,34 @@
 {
 	#amethyst tools
-	"item.testmod.amethyst_axe": "Amethyst Axe",
-	"item.testmod.amethyst_hoe": "Amethyst Hoe",
-	"item.testmod.amethyst_pickaxe": "Amethyst Pickaxe",	
-	"item.testmod.amethyst_shovel": "Amethyst Shovel",	
-	"item.testmod.amethyst_sword": "Amethyst Sword",
+	"item.ageofmagic.amethyst_axe": "Amethyst Axe",
+	"item.ageofmagic.amethyst_hoe": "Amethyst Hoe",
+	"item.ageofmagic.amethyst_pickaxe": "Amethyst Pickaxe",	
+	"item.ageofmagic.amethyst_shovel": "Amethyst Shovel",	
+	"item.ageofmagic.amethyst_sword": "Amethyst Sword",
 	
 	#armor
-	"item.testmod.amethyst_boots": "Amethyst Boots",
-	"item.testmod.amethyst_chestplate": "Amethyst Chestplate",	
-	"item.testmod.amethyst_helmet": "Amethyst Helmet",
-	"item.testmod.amethyst_leggings": "Amethyst Leggings",
+	"item.ageofmagic.amethyst_boots": "Amethyst Boots",
+	"item.ageofmagic.amethyst_chestplate": "Amethyst Chestplate",	
+	"item.ageofmagic.amethyst_helmet": "Amethyst Helmet",
+	"item.ageofmagic.amethyst_leggings": "Amethyst Leggings",
 		
 	#items
-	"item.testmod.long_tool_rod": "Long Tool Rod",
-	"item.testmod.pile_of_dirt": "Pile of Dirt",
-	"item.testmod.pile_of_gravel": "Pile of Gravel",
-	"item.testmod.pile_of_sand": "Pile of Sand",
-	"item.testmod.plant_fiber": "Plant Fiber",	
-	"item.testmod.rock": "Rock",
-	"item.testmod.sharp_rock": "Sharp Rock",
-	"item.testmod.twine": "Twine",
+	"item.ageofmagic.long_tool_rod": "Long Tool Rod",
+	"item.ageofmagic.pile_of_dirt": "Pile of Dirt",
+	"item.ageofmagic.pile_of_gravel": "Pile of Gravel",
+	"item.ageofmagic.pile_of_sand": "Pile of Sand",
+	"item.ageofmagic.plant_fiber": "Plant Fiber",	
+	"item.ageofmagic.rock": "Rock",
+	"item.ageofmagic.sharp_rock": "Sharp Rock",
+	"item.ageofmagic.twine": "Twine",
 
 	#ores
-	"item.testmod.amethyst": "Amethyst",
-	"block.testmod.amethyst_ore": "Amethyst Ore",
+	"item.ageofmagic.amethyst": "Amethyst",
+	"block.ageofmagic.amethyst_ore": "Amethyst Ore",
 	
 	#stone tools
-	"item.testmod.stone_knife": "Stone Knife",
-	"item.testmod.stone_spear": "Stone Spear",
+	"item.ageofmagic.stone_knife": "Stone Knife",
+	"item.ageofmagic.stone_spear": "Stone Spear",
 
 	#tabs
 	"itemGroup.items": "Items"
