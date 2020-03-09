@@ -9,7 +9,7 @@ public class ModItemGroup extends ItemGroup {
 	public final static ItemGroup ITEMS = (new ItemGroup(12, "items") {
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack createIcon() {
-			return new ItemStack(null);
+			return new ItemStack(AgeOfMagic.OnItemsRegisty.amethyst.get());
 		}
 	});
 	public static final ModItemGroup instance = new ModItemGroup(ItemGroup.GROUPS.length, "items");

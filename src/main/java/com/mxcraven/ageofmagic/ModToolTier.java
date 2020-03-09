@@ -13,9 +13,9 @@ import net.minecraft.util.LazyValue;
 	//Custom tool level like wood -> stone -> iron -> diamond
 	public enum ModToolTier implements IItemTier{
 		//(TIER, DURABILITY, EFFICIENCY, ATTCK DAMAGE, ENCHANT-ABILITY
-//		AMETHYST(4, 500, 4.5F, 4.0F, 30, () -> {
-//			return Ingredient.;
-//		});
+		AMETHYST(4, 500, 4.5F, 4.0F, 30, () -> {
+			return Ingredient.fromItems(AgeOfMagic.OnItemsRegisty.amethyst.get());
+		});
 //	   WOOD(0, 59, 2.0F, 0.0F, 15, () -> {
 //	      return Ingredient.fromTag(ItemTags.PLANKS);
 //	   }),
@@ -31,7 +31,6 @@ import net.minecraft.util.LazyValue;
 //	   GOLD(0, 32, 12.0F, 0.0F, 22, () -> {
 //	      return Ingredient.fromItems(Items.GOLD_INGOT);
 //	   });		
-		;
 		private final int harvestlevel;
 		private final int maxUses;
 		private final float efficiency;
