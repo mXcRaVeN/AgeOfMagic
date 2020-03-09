@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "testmod:items/plant_fiber"
+		"layer0": "ageofmagic:items/plant_fiber"
 		}
 }

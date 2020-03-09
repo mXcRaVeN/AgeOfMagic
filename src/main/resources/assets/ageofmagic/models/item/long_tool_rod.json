@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "testmod:items/long_tool_rod"
+		"layer0": "ageofmagic:items/long_tool_rod"
 		}
 }

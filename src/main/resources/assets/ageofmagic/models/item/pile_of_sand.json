@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "testmod:items/pile_of_sand"
+		"layer0": "ageofmagic:items/pile_of_sand"
 		}
 }

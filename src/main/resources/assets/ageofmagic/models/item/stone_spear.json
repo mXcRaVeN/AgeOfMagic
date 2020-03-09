@@ -1,6 +1,6 @@
 {
 	"parent": "item/handheld",
 	"textures": {
-		"layer0": "testmod:items/stone_spear"
+		"layer0": "ageofmagic:items/stone_spear"
 		}
 }

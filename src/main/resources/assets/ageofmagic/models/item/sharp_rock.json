@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "testmod:items/sharp_rock"
+		"layer0": "ageofmagic:items/sharp_rock"
 		}
 }
