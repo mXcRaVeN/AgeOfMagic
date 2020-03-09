@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "ageofmagic:plant_fiber"
+    }
+  },
+  "result": {
+    "item": "ageofmagic:twine",
+    "count": 1
+  }
+}

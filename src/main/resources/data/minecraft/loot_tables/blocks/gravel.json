@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:block",
+  "pools": [ {
+      "rolls": 4,
+      "entries": [ {
+          "type": "minecraft:item",
+          "name": "ageofmagic:pile_of_gravel"
+        } ],
+      "conditions": [ {
+          "condition": "minecraft:survives_explosion"
+        } ]
+    } ]
+}

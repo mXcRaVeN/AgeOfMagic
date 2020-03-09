@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " XT",
+    " #X",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "ageofmagic:sharp_rock"
+    },
+    "T": {
+      "item": "ageofmagic:twine"
+    }
+  },
+  "result": {
+    "item": "minecraft:stone_pickaxe"
+  }
+}

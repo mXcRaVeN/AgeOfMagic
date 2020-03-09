@@ -11,6 +11,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -20,6 +21,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraft.item.TridentItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -30,6 +32,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.IForgeRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("ageofmagic")
@@ -48,6 +51,7 @@ public class AgeOfMagic
         // Register the doClientStuff method for modloading
     	modEventBus.addListener(this::doClientStuff);
         OnItemsRegisty.ITEMS.register(modEventBus);
+        OnBlocksRegisty.BLOCKS.register(modEventBus);
         
         instance = this;
         // Register ourselves for server and other game events we are interested in
@@ -84,33 +88,32 @@ public class AgeOfMagic
     	 *						ARMOUR						   *
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */	
-    	final RegistryObject<Item> amethyst_boots = ITEMS.register("amethyst_boots", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
-    	final RegistryObject<Item> amethyst_legs = ITEMS.register("amethyst_legs", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
-    	final RegistryObject<Item> amethyst_chestplate = ITEMS.register("amethyst_chestplate", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
-    	final RegistryObject<Item> amethyst_helmet = ITEMS.register("amethyst_helmet", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_boots = ITEMS.register("amethyst_boots", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_legs = ITEMS.register("amethyst_legs", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_chestplate = ITEMS.register("amethyst_chestplate", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_helmet = ITEMS.register("amethyst_helmet", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
 
     	/*
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 *						ITEMS						   *
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */	
-    	//ITEM MUST BE PUBLIC IN ORDER TO REFERNCE IT IN OTHER LOCATIONS!!!!
     	public static final RegistryObject<Item> amethyst = ITEMS.register("amethyst", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> long_tool_rod = ITEMS.register("long_tool_rod", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> pile_of_dirt = ITEMS.register("pile_of_dirt", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> pile_of_gravel = ITEMS.register("pile_of_gravel", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> pile_of_sand = ITEMS.register("pile_of_sand", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> plant_fiber = ITEMS.register("plant_fiber", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> rock = ITEMS.register("rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> sharp_rock = ITEMS.register("sharp_rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	final RegistryObject<Item> twine = ITEMS.register("twine", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> long_tool_rod = ITEMS.register("long_tool_rod", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> pile_of_dirt = ITEMS.register("pile_of_dirt", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> pile_of_gravel = ITEMS.register("pile_of_gravel", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> pile_of_sand = ITEMS.register("pile_of_sand", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> plant_fiber = ITEMS.register("plant_fiber", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> rock = ITEMS.register("rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> sharp_rock = ITEMS.register("sharp_rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> twine = ITEMS.register("twine", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
 
     	/*
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 *							ORE						   *
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */	
-    	public static final RegistryObject<Item> amethyst_ore = ITEMS.register("amethyst_ore", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> amethyst_ore = ITEMS.register("amethyst_ore", () -> new Item(new Item.Properties().group(ModItemGroup.ORES)));
     	
     	/*
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -118,25 +121,25 @@ public class AgeOfMagic
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */	
     	//(TIER, ATTACK DAMAGE, ATTACK SPEED, ITEM GROUP
-    	final RegistryObject<Item> amethyst_sword = ITEMS.register("amethyst_sword", () -> new SwordItem(ModToolTier.AMETHYST, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
-    	final RegistryObject<Item> amethyst_pickaxe = ITEMS.register("amethyst_pickaxe", () -> new PickaxeItem(ModToolTier.AMETHYST, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
-    	final RegistryObject<Item> amethyst_axe = ITEMS.register("amethyst_axe", () -> new AxeItem(ModToolTier.AMETHYST, 5.0f, -3.0F, new Item.Properties().group(ItemGroup.COMBAT)));
-    	final RegistryObject<Item> amethyst_shovel = ITEMS.register("amethyst_shovel", () -> new ShovelItem(ModToolTier.AMETHYST, 1.5f, 1.0F, new Item.Properties().group(ItemGroup.TOOLS)));
-    	final RegistryObject<Item> amethyst_hoe = ITEMS.register("amethyst_hoe", () -> new HoeItem(ModToolTier.AMETHYST, 0.0F, new Item.Properties().group(ItemGroup.TOOLS)));
+    	public static final RegistryObject<Item> amethyst_sword = ITEMS.register("amethyst_sword", () -> new SwordItem(ModToolTier.AMETHYST, 3, -2.4F, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_pickaxe = ITEMS.register("amethyst_pickaxe", () -> new PickaxeItem(ModToolTier.AMETHYST, 1, -2.8F, new Item.Properties().group(ItemGroup.TOOLS)));
+    	public static final RegistryObject<Item> amethyst_axe = ITEMS.register("amethyst_axe", () -> new AxeItem(ModToolTier.AMETHYST, 5.0f, -3.0F, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_shovel = ITEMS.register("amethyst_shovel", () -> new ShovelItem(ModToolTier.AMETHYST, 1.5f, 1.0F, new Item.Properties().group(ItemGroup.TOOLS)));
+    	public static final RegistryObject<Item> amethyst_hoe = ITEMS.register("amethyst_hoe", () -> new HoeItem(ModToolTier.AMETHYST, 0.0F, new Item.Properties().group(ItemGroup.TOOLS)));
 
     	/*
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 *						STONE TOOLS					   *
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */
-    	final RegistryObject<Item> stone_spear = ITEMS.register("stone_spear", () -> new TridentItem(new Item.Properties().maxDamage(100).group(ItemGroup.COMBAT)));
-    	final RegistryObject<Item> stone_knife = ITEMS.register("stone_knife", () -> new KnifeItem(new Item.Properties().maxDamage(35).group(ItemGroup.COMBAT)));	
+    	public static final RegistryObject<Item> stone_spear = ITEMS.register("stone_spear", () -> new TridentItem(new Item.Properties().maxDamage(100).group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> stone_knife = ITEMS.register("stone_knife", () -> new KnifeItem(new Item.Properties().maxDamage(35).group(ItemGroup.COMBAT)));	
     }
     
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-    public static class OnBlockRegisty{
+    public static class OnBlocksRegisty{
     	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, MOD_ID);
     	
     	/*

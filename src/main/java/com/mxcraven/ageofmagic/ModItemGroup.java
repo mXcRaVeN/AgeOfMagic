@@ -12,13 +12,12 @@ public class ModItemGroup extends ItemGroup {
 			return new ItemStack(AgeOfMagic.OnItemsRegisty.amethyst.get());
 		}
 	});
-	public final static ItemGroup ORES = (new ItemGroup(13, "ORES") {
+	public final static ItemGroup ORES = (new ItemGroup(13, "ores") {
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack createIcon() {
 			return new ItemStack(AgeOfMagic.OnItemsRegisty.amethyst_ore.get());
 		}
 	});
-	public static final ModItemGroup instance = new ModItemGroup(ItemGroup.GROUPS.length, "items");
 
 	public ModItemGroup(int index, String label) {
 		super(index, label);

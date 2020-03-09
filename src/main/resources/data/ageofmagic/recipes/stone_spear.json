@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  X",
+    " T ",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "item": "ageofmagic:long_tool_rod"
+    },
+    "X": {
+      "item": "ageofmagic:sharp_rock"
+    },
+    "T": {
+      "item": "ageofmagic:twine"
+    }
+  },
+  "result": {
+    "item": "ageofmagic:stone_spear"
+  }
+}

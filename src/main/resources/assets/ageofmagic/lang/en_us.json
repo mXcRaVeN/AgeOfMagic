@@ -24,12 +24,13 @@
 
 	#ores
 	"item.ageofmagic.amethyst": "Amethyst",
-	"block.ageofmagic.amethyst_ore": "Amethyst Ore",
+	"item.ageofmagic.amethyst_ore": "Amethyst Ore",
 	
 	#stone tools
 	"item.ageofmagic.stone_knife": "Stone Knife",
 	"item.ageofmagic.stone_spear": "Stone Spear",
 
 	#tabs
-	"itemGroup.items": "Items"
+	"itemGroup.items": "Items",
+	"itemGroup.ores": "Ores"
 }
