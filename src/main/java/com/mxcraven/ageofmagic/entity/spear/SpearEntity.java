@@ -16,8 +16,6 @@ import net.minecraft.world.World;
 
 public class SpearEntity extends TridentEntity {
 	private ItemStack thrownStack = new ItemStack(AgeOfMagic.OnItemsRegisty.stone_spear.get());
-	private boolean dealtDamage;
-
 	public SpearEntity(EntityType<? extends SpearEntity> type, World worldIn) {
 		super(type, worldIn);
 	}
@@ -32,7 +30,6 @@ public class SpearEntity extends TridentEntity {
 
 		Entity entity1 = this.getShooter();
 		DamageSource damagesource = DamageSource.causeTridentDamage(this, (Entity) (entity1 == null ? this : entity1));
-		this.dealtDamage = true;
 		SoundEvent soundevent = SoundEvents.ITEM_TRIDENT_HIT;
 		if (entity.attackEntityFrom(damagesource, f)) {
 			if (entity.getType() == EntityType.ENDERMAN) {
