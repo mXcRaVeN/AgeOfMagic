@@ -3,25 +3,27 @@ package com.mxcraven.ageofmagic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mxcraven.ageofmagic.entity.spear.SpearEntity;
 import com.mxcraven.ageofmagic.item.KnifeItem;
+import com.mxcraven.ageofmagic.item.RockItem;
+import com.mxcraven.ageofmagic.item.SpearItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
-import net.minecraft.item.TridentItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -32,7 +34,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraft.util.ResourceLocation;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("ageofmagic")
@@ -52,6 +54,7 @@ public class AgeOfMagic
     	modEventBus.addListener(this::doClientStuff);
         OnItemsRegisty.ITEMS.register(modEventBus);
         OnBlocksRegisty.BLOCKS.register(modEventBus);
+        OnEntityTypesRegisty.ENTITIES.register(modEventBus);
         
         instance = this;
         // Register ourselves for server and other game events we are interested in
@@ -68,7 +71,6 @@ public class AgeOfMagic
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
-
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
@@ -104,7 +106,7 @@ public class AgeOfMagic
     	public static final RegistryObject<Item> pile_of_gravel = ITEMS.register("pile_of_gravel", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
     	public static final RegistryObject<Item> pile_of_sand = ITEMS.register("pile_of_sand", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
     	public static final RegistryObject<Item> plant_fiber = ITEMS.register("plant_fiber", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
-    	public static final RegistryObject<Item> rock = ITEMS.register("rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> rock = ITEMS.register("rock", () -> new RockItem(new Item.Properties().group(ModItemGroup.ITEMS)));
     	public static final RegistryObject<Item> sharp_rock = ITEMS.register("sharp_rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
     	public static final RegistryObject<Item> twine = ITEMS.register("twine", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
 
@@ -132,7 +134,7 @@ public class AgeOfMagic
     	 *						STONE TOOLS					   *
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */
-    	public static final RegistryObject<Item> stone_spear = ITEMS.register("stone_spear", () -> new TridentItem(new Item.Properties().maxDamage(100).group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> stone_spear = ITEMS.register("stone_spear", () -> new SpearItem(new Item.Properties().maxDamage(100).group(ItemGroup.COMBAT)));
     	public static final RegistryObject<Item> stone_knife = ITEMS.register("stone_knife", () -> new KnifeItem(new Item.Properties().maxDamage(35).group(ItemGroup.COMBAT)));	
     }
     
@@ -148,5 +150,12 @@ public class AgeOfMagic
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */	
     	final RegistryObject<Block> amethyst_ore = BLOCKS.register("amethyst_ore", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 3.0f).harvestLevel(3).harvestTool(ToolType.PICKAXE).sound(SoundType.STONE)));
+    }
+    
+    public static class OnEntityTypesRegisty{
+    	public static final DeferredRegister<EntityType<?>> ENTITIES = new DeferredRegister<>(ForgeRegistries.ENTITIES, MOD_ID);
+    	
+    	public static final RegistryObject<EntityType<RockEntity>> rock = ENTITIES.register("rock", () -> EntityType.Builder.<RockEntity>create(RockEntity::new, EntityClassification.MISC).size(0.25F, 0.25F).build(new ResourceLocation(MOD_ID, "rock").toString()));
+    	public static final RegistryObject<EntityType<SpearEntity>> spear = ENTITIES.register("spear", () -> EntityType.Builder.<SpearEntity>create(SpearEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).build(new ResourceLocation(MOD_ID,"spear").toString()));
     }
 }
