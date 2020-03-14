@@ -32,5 +32,11 @@
 
 	#tabs
 	"itemGroup.items": "Items",
-	"itemGroup.ores": "Ores"
+	"itemGroup.ores": "Ores",
+	
+	
+	
+	
+	
+	"entity.ageofmagic.stone_spear": "Stone Spear"
 }

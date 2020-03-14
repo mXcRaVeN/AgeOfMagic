@@ -1,6 +1,6 @@
 package com.mxcraven.ageofmagic.item;
 
-import com.mxcraven.ageofmagic.RockEntity;
+import com.mxcraven.ageofmagic.entity.rock.RockEntity;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

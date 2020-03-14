@@ -3,10 +3,11 @@ package com.mxcraven.ageofmagic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mxcraven.ageofmagic.entity.spear.SpearEntity;
+import com.mxcraven.ageofmagic.entity.rock.RockEntity;
+import com.mxcraven.ageofmagic.entity.spear.StoneSpearEntity;
 import com.mxcraven.ageofmagic.item.KnifeItem;
 import com.mxcraven.ageofmagic.item.RockItem;
-import com.mxcraven.ageofmagic.item.SpearItem;
+import com.mxcraven.ageofmagic.item.StoneSpearItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -134,7 +135,7 @@ public class AgeOfMagic
     	 *						STONE TOOLS					   *
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */
-    	public static final RegistryObject<Item> stone_spear = ITEMS.register("stone_spear", () -> new SpearItem(new Item.Properties().maxDamage(100).group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> stone_spear = ITEMS.register("stone_spear", () -> new StoneSpearItem(new Item.Properties().maxDamage(100).group(ItemGroup.COMBAT)));
     	public static final RegistryObject<Item> stone_knife = ITEMS.register("stone_knife", () -> new KnifeItem(new Item.Properties().maxDamage(35).group(ItemGroup.COMBAT)));	
     }
     
@@ -156,6 +157,6 @@ public class AgeOfMagic
     	public static final DeferredRegister<EntityType<?>> ENTITIES = new DeferredRegister<>(ForgeRegistries.ENTITIES, MOD_ID);
     	
     	public static final RegistryObject<EntityType<RockEntity>> rock = ENTITIES.register("rock", () -> EntityType.Builder.<RockEntity>create(RockEntity::new, EntityClassification.MISC).size(0.25F, 0.25F).build(new ResourceLocation(MOD_ID, "rock").toString()));
-    	public static final RegistryObject<EntityType<SpearEntity>> spear = ENTITIES.register("spear", () -> EntityType.Builder.<SpearEntity>create(SpearEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).build(new ResourceLocation(MOD_ID,"spear").toString()));
+    	public static final RegistryObject<EntityType<StoneSpearEntity>> stone_spear = ENTITIES.register("stone_spear", () -> EntityType.Builder.<StoneSpearEntity>create(StoneSpearEntity::new, EntityClassification.MISC).size(0.5F, 0.5F).build(new ResourceLocation(MOD_ID,"stone_spear").toString()));
     }
 }

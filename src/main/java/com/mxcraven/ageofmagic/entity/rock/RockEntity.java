@@ -1,4 +1,4 @@
-package com.mxcraven.ageofmagic;
+package com.mxcraven.ageofmagic.entity.rock;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
