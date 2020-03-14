@@ -1,4 +1,4 @@
-package com.mxcraven.ageofmagic.entity.spear;
+package com.mxcraven.ageofmagic.client.renderer.entity.model;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -15,25 +15,37 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class StoneSpearModel extends Model {
-	public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("AgeOfMagic\\src\\main\\resources\\assets\\ageofmagic\\textures\\entity\\stone_spear.png");
-	private final ModelRenderer modelRenderer = new ModelRenderer(64, 64, 7, 8);
+	public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("textures/entity/stone_spear.png");
+	private final ModelRenderer modelRenderer = new ModelRenderer(32, 32, 7, 8);
 
 	public StoneSpearModel() {
 		super(RenderType::func_228634_a_);
-		this.modelRenderer.func_228301_a_(-1.0F, -28.0F, 2.0F, 1.0F, 1.0F, 1.0F, 0.0F);
-		ModelRenderer modelRenderer = new ModelRenderer(64, 64, 8, 5);
-		modelRenderer.func_228300_a_(-1.0F, -28.0F, -2.0F, 1.0F, 1.0F, 1.0F);
+		this.modelRenderer.func_228303_a_(-1.0F, -28.0F, 2.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+		ModelRenderer modelRenderer = new ModelRenderer(32, 32, 8, 5);
+		modelRenderer.func_228303_a_(-1.0F, -28.0F, -2.0F, 1.0F, 1.0F, 1.0F, 0.0F, false);
 		this.modelRenderer.func_78792_a(modelRenderer);
-		ModelRenderer modelRenderer1 = new ModelRenderer(64, 64, 4, 4);
-		modelRenderer1.func_228300_a_(-1.0F, -30.0F, 1.0F, 1.0F, 4.0F, 1.0F);
+		ModelRenderer modelRenderer1 = new ModelRenderer(32, 32, 4, 4);
+		modelRenderer1.func_228303_a_(-1.0F, -30.0F, 1.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		this.modelRenderer.func_78792_a(modelRenderer1);
-		ModelRenderer modelRenderer2 = new ModelRenderer(64, 64, 7, 0);
-		modelRenderer2.func_228300_a_(-1.0F, -30.0F, -1.0F, 1.0F, 4.0F, 1.0F);
+		ModelRenderer modelRenderer2 = new ModelRenderer(32, 32, 7, 0);
+		modelRenderer2.func_228303_a_(-1.0F, -30.0F, -1.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
 		this.modelRenderer.func_78792_a(modelRenderer2);
-		ModelRenderer modelRenderer3 = new ModelRenderer(64, 64, 0, 0);
-		modelRenderer3.func_228300_a_(-1.0F, 32.0F, 0.0F, 1.0F, 32.0F, 1.0F);
+		ModelRenderer modelRenderer3 = new ModelRenderer(32, 32, 0, 0);
+		modelRenderer3.mirror = true;
+		modelRenderer3.func_228303_a_(-1.0F, 32.0F, 0.0F, 1.0F, 32.0F, 1.0F, 0.0F, false);
 		this.modelRenderer.func_78792_a(modelRenderer3);
 	}
+
+//	textureWidth = 32;
+//	textureHeight = 32;
+//
+//	bone = new RendererModel(this);
+//	bone.setRotationPoint(0.0F, 24.0F, 0.0F);
+//	bone.cubeList.add(new ModelBox(bone, 7, 8, -1.0F, -28.0F, 2.0F, 1, 1, 1, 0.0F, false));
+//	bone.cubeList.add(new ModelBox(bone, 8, 5, -1.0F, -28.0F, -2.0F, 1, 1, 1, 0.0F, false));
+//	bone.cubeList.add(new ModelBox(bone, 4, 4, -1.0F, -30.0F, 1.0F, 1, 4, 1, 0.0F, false));
+//	bone.cubeList.add(new ModelBox(bone, 7, 0, -1.0F, -30.0F, -1.0F, 1, 4, 1, 0.0F, false));
+//	bone.cubeList.add(new ModelBox(bone, 0, 0, -1.0F, -32.0F, 0.0F, 1, 32, 1, 0.0F, false));
 
 //	public StoneSpearEntity() {
 //		textureWidth = 64;

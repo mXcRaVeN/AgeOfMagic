@@ -11,6 +11,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.DataSerializers;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -21,6 +24,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class StoneSpearEntity extends AbstractArrowEntity {
+	private static final DataParameter<Boolean> field_226571_aq_ = EntityDataManager.createKey(StoneSpearEntity.class,
+			DataSerializers.BOOLEAN);
 	private ItemStack thrownStack = new ItemStack(AgeOfMagic.OnItemsRegisty.stone_spear.get());
 	private boolean dealtDamage;
 	public int returningTicks;
@@ -146,5 +151,10 @@ public class StoneSpearEntity extends AbstractArrowEntity {
 	@OnlyIn(Dist.CLIENT)
 	public boolean isInRangeToRender3d(double x, double y, double z) {
 		return true;
+	}
+
+	@OnlyIn(Dist.CLIENT)
+	public boolean func_226572_w_() {
+		return this.dataManager.get(field_226571_aq_);
 	}
 }

@@ -92,7 +92,7 @@ public class AgeOfMagic
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     	 */	
     	public static final RegistryObject<Item> amethyst_boots = ITEMS.register("amethyst_boots", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)));
-    	public static final RegistryObject<Item> amethyst_legs = ITEMS.register("amethyst_legs", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
+    	public static final RegistryObject<Item> amethyst_leggings = ITEMS.register("amethyst_leggings", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)));
     	public static final RegistryObject<Item> amethyst_chestplate = ITEMS.register("amethyst_chestplate", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)));
     	public static final RegistryObject<Item> amethyst_helmet = ITEMS.register("amethyst_helmet", () -> new ArmorItem(ModArmorMaterial.AMETHYST, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)));
 
