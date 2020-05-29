@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class StoneSpearModel extends Model {
-	public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("textures/entity/stone_spear.png");
+	public static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("ageofmagic/textures/entity/stone_spear.png");
 	private final ModelRenderer modelRenderer = new ModelRenderer(32, 32, 7, 8);
 
 	public StoneSpearModel() {

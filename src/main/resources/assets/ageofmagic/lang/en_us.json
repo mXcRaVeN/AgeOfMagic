@@ -28,15 +28,8 @@
 	
 	#stone tools
 	"item.ageofmagic.stone_knife": "Stone Knife",
-	"item.ageofmagic.stone_spear": "Stone Spear",
 
 	#tabs
 	"itemGroup.items": "Items",
-	"itemGroup.ores": "Ores",
-	
-	
-	
-	
-	
-	"entity.ageofmagic.stone_spear": "Stone Spear"
+	"itemGroup.ores": "Ores"
 }
