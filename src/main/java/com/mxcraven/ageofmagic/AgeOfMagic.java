@@ -108,6 +108,7 @@ public class AgeOfMagic
     	public static final RegistryObject<Item> rock = ITEMS.register("rock", () -> new RockItem(new Item.Properties().group(ModItemGroup.ITEMS)));
     	public static final RegistryObject<Item> sharp_rock = ITEMS.register("sharp_rock", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
     	public static final RegistryObject<Item> twine = ITEMS.register("twine", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
+    	public static final RegistryObject<Item> oak_wood = ITEMS.register("oak_wood", () -> new Item(new Item.Properties().group(ModItemGroup.ITEMS)));
 
     	/*
     	 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
